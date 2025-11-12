@@ -1,0 +1,15 @@
+int numSquares(int n) {
+    int arr[n+1];
+    arr[0]=0;
+
+    for(int i=1;i<=n;i++){
+        arr[i]=INT_MAX;
+        for(int j=1;j*j<=i;j++){
+            if(arr[i]>1+arr[i-j*j])
+                arr[i]=1+arr[i-j*j];
+            
+        }
+    }
+    return arr[n];
+    
+}
