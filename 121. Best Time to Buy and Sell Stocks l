@@ -1,0 +1,16 @@
+int maxProfit(int* prices, int pricesSize) {
+    int max=0;
+    int i=0,j=1;
+    while(j<pricesSize){
+        if(prices[j]<prices[i]){
+            i=j;
+        }
+        else{
+            int a= prices[j]-prices[i];
+            if(a>max) max=a;
+        }
+        j++;
+    }
+    return max;
+    
+}
